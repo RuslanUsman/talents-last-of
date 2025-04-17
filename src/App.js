@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { HashRouter  as Router, Route, Routes } from 'react-router-dom';
 
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
@@ -13,18 +13,22 @@ import Assembling from './components/Categories/Assembling';
 const App = () => {
   return (
     <Router>
+
       <Header />
       <Routes>
-        <Route path="/" element={<MainMenu />} />
-        <Route path="/instinct" element={<Instinct />} />
-        <Route path="/intelligence" element={<Intelligence />} />
-        <Route path="/fight" element={<Fight />} />
-        <Route path="/price" element={<Price />} />
-        <Route path="/assembling" element={<Assembling />} />
-      </Routes>
+  <Route path="/" element={<MainMenu />} />
+  <Route path="/instinct" element={<Instinct />} />
+  <Route path="/intelligence" element={<Intelligence />} />
+  <Route path="/fight" element={<Fight />} />
+  <Route path="/price" element={<Price />} />
+  <Route path="/assembling" element={<Assembling />} />
+  <Route path="*" element={<MainMenu />} />
+</Routes>
+
       <Footer />
     </Router>
   );
 };
+
 
 export default App;
